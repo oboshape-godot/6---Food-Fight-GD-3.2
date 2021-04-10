@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="6 - Food Fight GD 3.2"
+run/main_scene="res://Level/TemplateLevel.tscn"
 config/icon="res://icon.png"
 
 [rendering]
