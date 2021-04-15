@@ -2,12 +2,20 @@ extends KinematicBody
 
 var food_types = {}
 
+var can_fire = true
+
 const PROJECTILE_SPEED = 50
 
 
 func _ready():
 	food_types = FileGrabber.get_files("res://Projectiles/Food_Types/")
 	randomize()
+
+func try_to_fire():
+	if can_fire:
+		fire()
+		can_fire = false
+		$Timer.start()
 
 
 func fire():
@@ -19,3 +27,7 @@ func fire():
 	
 	var character_forward = global_transform.basis.z.normalized()
 	projectile.linear_velocity = character_forward * PROJECTILE_SPEED
+
+
+func _on_Timer_timeout():
+	can_fire = true
