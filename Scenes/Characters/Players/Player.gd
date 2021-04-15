@@ -1,4 +1,4 @@
-extends KinematicBody
+extends "res://Scenes/Characters/Character.gd"
 
 const SPEED = 10
 const UP = Vector3(0,1,0)
@@ -30,6 +30,9 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotation = h_camera_rotation(-event.relative.x/mouse_sensitivity)
 		$Camera.rotation = v_camera_rotation(-event.relative.y/mouse_sensitivity)
+	
+	if Input.is_action_just_pressed("fire"):
+		fire()
 
 
 func move():
