@@ -17,7 +17,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move()
 	animate()
 
@@ -43,7 +43,7 @@ func move():
 	
 	motion = direction
 	
-	move_and_slide(motion * SPEED, UP)
+	var _err = move_and_slide(motion * SPEED, UP) # not using the return value, just to remove warning
 	
 
 
