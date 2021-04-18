@@ -20,6 +20,8 @@ shape = SubResource( 1 )
 
 [node name="Spawners" type="Node" parent="."]
 
+[node name="Robots" type="Node" parent="."]
+
 [node name="Walls" type="Node" parent="."]
 
 [node name="Furniture" type="Node" parent="."]
