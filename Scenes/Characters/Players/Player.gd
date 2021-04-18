@@ -23,10 +23,6 @@ func _physics_process(_delta):
 
 
 func _input(event):
-	if event is InputEventKey:
-		if event.scancode == KEY_ESCAPE:
-			get_tree().quit()
-	
 	if event is InputEventMouseMotion:
 		rotation = h_camera_rotation(-event.relative.x/mouse_sensitivity)
 		$Camera.rotation = v_camera_rotation(-event.relative.y/mouse_sensitivity)
